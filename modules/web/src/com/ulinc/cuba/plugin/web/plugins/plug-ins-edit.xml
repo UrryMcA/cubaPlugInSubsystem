@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://plugInsEdit.caption"
+        focusComponent="form"
+        messagesPack="com.groupstp.rtneo.web.screens.plugins">
+    <data>
+        <instance id="plugInsDc"
+                  class="com.groupstp.rtneo.entity.plugins.PlugIns">
+            <view extends="_local"/>
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="plugInsDc">
+            <column width="350px">
+                <textField id="nameField" property="name"/>
+                <textField id="classNameField" property="className"/>
+                <textField id="pathField" property="path"/>
+                <textField id="commandField" property="command"/>
+                <checkBox id="openFormField" property="openForm"/>
+                <textField id="formClassField" property="formClass"/>
+                <checkBox id="runBeanField" property="runBean"/>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>
